@@ -1,0 +1,14 @@
+[Unit]
+Description=BMP680 to NATS
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=python3 /home/pi/bmp680_2nats/bmp680_2nats.py
+
+[Install]
+WantedBy=multi-user.target
